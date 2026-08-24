@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: root-app
+  name: rbac
   namespace: argocd
   # The finalizer enables cascading deletes (deleting this app deletes its resources)
   finalizers:
@@ -13,7 +13,7 @@ spec:
   source:
     repoURL: https://github.com/raidi-kartheek/eks-argocd.git
     targetRevision: main
-    path: applications
+    path: rbac
 
   # Destination configuration pointing to the target cluster and namespace
   destination:
